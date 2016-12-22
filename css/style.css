@@ -13,11 +13,11 @@
 
 /* #users page */
 
-.usersPageContainer .tableContainer {
+.tableContainer {
 	padding: 0 15%;
 }
 
-.usersPageContainer .description {
+.description {
 	margin: 5px 0;
 	padding: 10px 15%;
 
@@ -28,19 +28,19 @@
 	font-style: bold;
 }
 
-.usersPageContainer .tableContainer .search-form {
+.tableContainer .search-form {
 	margin-top: 10px;
 	margin-bottom: 30px;
 }
 
-.usersPageContainer .tableContainer .table-striped tbody tr:nth-of-type(odd) {
+.tableContainer .table-striped tbody tr:nth-of-type(odd) {
   	background-color: #fff8ef;
 }
 
-.usersPageContainer .tableContainer .table-striped tbody tr {
+.tableContainer .table-striped tbody tr {
   	padding-left: 15px;
 }
 
-.usersPageContainer .tableContainer .table-striped tbody tr td {
+.tableContainer .table-striped tbody tr td {
   	padding: 15px 5;
 }

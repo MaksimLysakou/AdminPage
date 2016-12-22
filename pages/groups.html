@@ -1,5 +1,39 @@
 <div ng-controller="groupsController as groupsCtrl">
-	<h1>Groups page</h1>
+	<div class="description">Страница просмотра и поиска групп</div>
 	
-	
+	<div class="tableContainer">
+		<div class="input-group search-form">
+		  <span class="input-group-addon">Поиск: </span>
+		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search.$" />
+		</div>	
+
+        <table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Id</th>
+				<th>Название группы</th>
+				<th>Пользователи</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="group in groups| filter:search:strict">
+					<td>{{ group.groupname }}</td>
+					<td>{{ group.label }}</td>
+					<td>
+						<div ng-repeat="user in group.users">
+							<a href="#/users/{{ user }}">
+								{{ user }}
+							</a> 
+						</div>
+					</td>
+					<td>
+						<button type="button" class="btn btn-default" ng-click="editGroup(group);">
+						  	Редактировать
+						</button>
+					</td>
+				</tr>
+			</tbody>
+        </table>
+	</div>
 </div>

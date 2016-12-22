@@ -50,7 +50,20 @@
 				"firstName" : "Максим",
 				"lastName" : "Лысаков",
 				"email" : "Lysakov_MS_14@mail.ru",
-				"groups" : [ "group1", "group3", "group4"]
+				"groups" : [ 
+					{ 
+						"label" : "Лучшая группа",
+						"groupname" : "group1"
+					}, 
+					{ 
+						"label" : "Пользователи",
+						"groupname" : "group3"
+					}, 
+					{ 
+						"label" : "Администраторы",
+						"groupname" : "group4"
+					}
+				]
 			},
 			{ 
 				"username" : "BeStUsEr",
@@ -64,7 +77,16 @@
 				"firstName" : "Ipsum",
 				"lastName" : "Dolor",
 				"email" : "sit-amet@example.com",
-				"groups" : [ "group1", "group2" ]
+				"groups" : [ 
+					{
+						"label" : "Лучшая группа",
+						"groupname" : "group1"
+					},
+					{
+						"label" : "Лучшая группа",
+						"groupname" : "group2"
+					}
+				]
 			}
 		]; // TODO: http get request;
 
@@ -77,25 +99,33 @@
 		this.username = $routeParams.username;
 	});
 
-	app.controller('groupsController', function($scope) {
+	app.controller('groupsController', function($scope, $location) {
 		$scope.groups = [
 			{ 
+				"label" : "Лучшая группа",
 				"groupname" : "group1",
 				"users" : [ "First-user", "Lorem.User" ]
 			},
 			{ 
+				"label" : "Лучшая группа",
 				"groupname" : "group2",
 				"users" : [ "Lorem.User" ]
 			},
 			{ 
+				"label" : "Пользователи",
 				"groupname" : "group3",
 				"users" : [ "First-user" ]
 			},
 			{ 
+				"label" : "Администраторы",
 				"groupname" : "group4",
 				"users" : [ "First-user" ]
 			}
-		] // TODO: http get request;
+		]; // TODO: http get request;
+
+		$scope.editGroup = function(group) {
+			$location.url("groups/" + group.groupname);
+		}
 	});
 
 	app.controller('groupController', function($routeParams) {
