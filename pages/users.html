@@ -19,7 +19,7 @@
 			</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in users | filter:search:strict | limitTo: elementsLimit">
+				<tr ng-repeat="user in usersCtrl.users | filter:search:strict | limitTo: usersCtrl.elementsLimit">
 					<td>{{ user.username }}</td>
 					<td>{{ user.firstName }}</td>
 					<td>{{ user.lastName }}</td>	
@@ -32,7 +32,7 @@
 						</div>
 					</td>
 					<td>
-						<button type="button" class="btn btn-default" ng-click="editUser(user);">
+						<button type="button" class="btn btn-default" ng-click="usersCtrl.editUser(user);">
 						  	Редактировать
 						</button>
 					</td>

@@ -43,8 +43,8 @@
 		};
 	});
 
-	app.controller('usersController', function($scope, $location) {
-		$scope.users = [
+	app.controller('usersController', function($location) {
+		this.users = [
 			{ 
 				"username" : "First-user",
 				"firstName" : "Максим",
@@ -88,19 +88,15 @@
 					}
 				]
 			}
-		]; // TODO: http get request;
-
-		$scope.elementsLimit = 15;
+		]; // TODO: http get request; (15)
 
 		window.onscroll = function() {
-		  	if(window.scrollY == window.scrollMaxY && $scope.elementsLimit < $scope.users.length){
-		  		$scope.elementsLimit += 5;
-
-		  		$scope.$digest(); //detect changes in element
+		  	if(window.scrollY == window.scrollMaxY && this.elementsLimit < this.users.length){
+		  		// TODO: http get request; (+5)
 		  	}
 		}
 
-		$scope.editUser = function(user) {
+		this.editUser = function(user) {
 			$location.url("users/" + user.username);
 		}
 	});
@@ -109,8 +105,8 @@
 		this.username = $routeParams.username;
 	});
 
-	app.controller('groupsController', function($scope, $location) {
-		$scope.groups = [
+	app.controller('groupsController', function($location) {
+		this.groups = [
 			{ 
 				"label" : "Лучшая группа",
 				"groupname" : "group1",
@@ -131,19 +127,15 @@
 				"groupname" : "group4",
 				"users" : [ "First-user" ]
 			}
-		]; // TODO: http get request;
-
-		$scope.elementsLimit = 15;
+		]; // TODO: http get request; (15)
 
 		window.onscroll = function() {
-		  	if(window.scrollY == window.scrollMaxY && $scope.elementsLimit < $scope.groups.length){
-		  		$scope.elementsLimit += 5;
-
-		  		$scope.$digest(); //detect changes in element
+		  	if(window.scrollY == window.scrollMaxY && this.elementsLimit < this.groups.length){
+		  		// TODO: new http get request; (+5)
 		  	}
 		}
 
-		$scope.editGroup = function(group) {
+		this.editGroup = function(group) {
 			$location.url("groups/" + group.groupname);
 		}
 	});

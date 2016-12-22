@@ -17,7 +17,7 @@
 			</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="group in groups| filter:search:strict | limitTo: elementsLimit">
+				<tr ng-repeat="group in groupsCtrl.groups| filter:search:strict | limitTo: groupsCtrl.elementsLimit">
 					<td>{{ group.groupname }}</td>
 					<td>{{ group.label }}</td>
 					<td>
@@ -28,7 +28,7 @@
 						</div>
 					</td>
 					<td>
-						<button type="button" class="btn btn-default" ng-click="editGroup(group);">
+						<button type="button" class="btn btn-default" ng-click="groupsCtrl.editGroup(group);">
 						  	Редактировать
 						</button>
 					</td>
