@@ -69,7 +69,7 @@
 				"username" : "BeStUsEr",
 				"firstName" : "Петька",
 				"lastName" : "Васильев",
-				"email" : "nagibator2006@tut.by",
+				"email" : "username2006@tut.by",
 				"groups" : []
 			},
 			{ 
@@ -89,6 +89,16 @@
 				]
 			}
 		]; // TODO: http get request;
+
+		$scope.elementsLimit = 15;
+
+		window.onscroll = function() {
+		  	if(window.scrollY == window.scrollMaxY && $scope.elementsLimit < $scope.users.length){
+		  		$scope.elementsLimit += 5;
+
+		  		$scope.$digest(); //detect changes in element
+		  	}
+		}
 
 		$scope.editUser = function(user) {
 			$location.url("users/" + user.username);
@@ -122,6 +132,16 @@
 				"users" : [ "First-user" ]
 			}
 		]; // TODO: http get request;
+
+		$scope.elementsLimit = 15;
+
+		window.onscroll = function() {
+		  	if(window.scrollY == window.scrollMaxY && $scope.elementsLimit < $scope.groups.length){
+		  		$scope.elementsLimit += 5;
+
+		  		$scope.$digest(); //detect changes in element
+		  	}
+		}
 
 		$scope.editGroup = function(group) {
 			$location.url("groups/" + group.groupname);

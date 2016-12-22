@@ -13,7 +13,7 @@
 
 /* #users page */
 
-.tableContainer {
+.contentContainer {
 	padding: 0 15%;
 }
 
@@ -28,19 +28,19 @@
 	font-style: bold;
 }
 
-.tableContainer .search-form {
+.contentContainer .search-form {
 	margin-top: 10px;
 	margin-bottom: 30px;
 }
 
-.tableContainer .table-striped tbody tr:nth-of-type(odd) {
+.contentContainer .table-striped tbody tr:nth-of-type(odd) {
   	background-color: #fff8ef;
 }
 
-.tableContainer .table-striped tbody tr {
+.contentContainer .table-striped tbody tr {
   	padding-left: 15px;
 }
 
-.tableContainer .table-striped tbody tr td {
+.contentContainer .table-striped tbody tr td {
   	padding: 15px 5;
 }

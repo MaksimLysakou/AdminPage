@@ -1,7 +1,7 @@
 <div class="usersPageContainer" ng-controller="usersController as usersCtrl">
 	<div class="description">Страница просмотра и поиска пользователей</div>
 	
-	<div class="tableContainer">
+	<div class="contentContainer">
 		<div class="input-group search-form">
 		  <span class="input-group-addon">Поиск: </span>
 		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search.$" />
@@ -19,7 +19,7 @@
 			</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in users| filter:search:strict">
+				<tr ng-repeat="user in users | filter:search:strict | limitTo: elementsLimit">
 					<td>{{ user.username }}</td>
 					<td>{{ user.firstName }}</td>
 					<td>{{ user.lastName }}</td>	

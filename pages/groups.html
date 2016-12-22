@@ -1,7 +1,7 @@
 <div ng-controller="groupsController as groupsCtrl">
 	<div class="description">Страница просмотра и поиска групп</div>
 	
-	<div class="tableContainer">
+	<div class="contentContainer">
 		<div class="input-group search-form">
 		  <span class="input-group-addon">Поиск: </span>
 		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search.$" />
@@ -17,7 +17,7 @@
 			</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="group in groups| filter:search:strict">
+				<tr ng-repeat="group in groups| filter:search:strict | limitTo: elementsLimit">
 					<td>{{ group.groupname }}</td>
 					<td>{{ group.label }}</td>
 					<td>
