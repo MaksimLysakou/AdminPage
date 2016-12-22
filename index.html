@@ -5,6 +5,7 @@
 
 	<title>Admin page</title>
 	<link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<script type="text/javascript" src="vendor/js/angular.min.js"></script>
 	<script type="text/javascript" src="vendor/js/angular-route.min.js"></script>
@@ -16,15 +17,15 @@
 	<div ng-controller="navController as navCtrl">
 		<ul class="nav nav-tabs">
 		  <li ng-repeat="tab in navCtrl.tabs" ng-class="{ 'active': navCtrl.activeTab === tab }">
-		  	<a href="{{ tab.href }}" ng-click="navigation.setActiveTab(tab)"> {{ tab.label }} {{ tab.isActive()}} </a>
+		  	<a href="{{ tab.href }}"> {{ tab.label }} {{ tab.isActive()}} </a>
 		  </li>
 		</ul>
-	</div>
+	
 	
  	<div id="main">
       	<div ng-view></div>
   	</div>
-  
+  </div>
 </body>
 
 </html>

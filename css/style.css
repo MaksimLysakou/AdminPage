@@ -1,0 +1,46 @@
+/* #common */
+.nav-tabs {
+	padding: 10px 15%;
+	font-size: 18px;
+	background-color: #EFEFEF;
+
+	color: #333333;
+}
+
+.nav-tabs li {
+	color: #AA3333;
+}
+
+/* #users page */
+
+.usersPageContainer .tableContainer {
+	padding: 0 15%;
+}
+
+.usersPageContainer .description {
+	margin: 5px 0;
+	padding: 10px 15%;
+
+	background-color: #ffefd8;
+	border-top: 1px solid #ffdeaf;
+	border-bottom: 1px solid #ffdeaf;
+
+	font-style: bold;
+}
+
+.usersPageContainer .tableContainer .search-form {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.usersPageContainer .tableContainer .table-striped tbody tr:nth-of-type(odd) {
+  	background-color: #fff8ef;
+}
+
+.usersPageContainer .tableContainer .table-striped tbody tr {
+  	padding-left: 15px;
+}
+
+.usersPageContainer .tableContainer .table-striped tbody tr td {
+  	padding: 15px 5;
+}

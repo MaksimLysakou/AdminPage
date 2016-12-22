@@ -43,7 +43,7 @@
 		};
 	});
 
-	app.controller('usersController', function($scope) {
+	app.controller('usersController', function($scope, $location) {
 		$scope.users = [
 			{ 
 				"username" : "First-user",
@@ -61,12 +61,16 @@
 			},
 			{ 
 				"username" : "Lorem.User",
-				"firstName" : "Ipsim",
+				"firstName" : "Ipsum",
 				"lastName" : "Dolor",
 				"email" : "sit-amet@example.com",
 				"groups" : [ "group1", "group2" ]
 			}
-		] // TODO: http get request;
+		]; // TODO: http get request;
+
+		$scope.editUser = function(user) {
+			$location.url("users/" + user.username);
+		}
 	});
 
 	app.controller('userController', function($routeParams) {
