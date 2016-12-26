@@ -1,7 +1,6 @@
 var usersService = (function(){
 
-	function getUsers(request, start, count) {
-		return [
+	this.users = [
 					{ 
 						"username" : "First-user",
 						"firstName" : "Максим",
@@ -45,11 +44,23 @@ var usersService = (function(){
 							}
 						]
 					}
-				]; // TODO: http get request; (15)
+				];
+
+	function getUsers(request, start, count) {
+		return users; // TODO: http get request; (15)
+	}
+
+	function getUser(username) {
+		var currentUser = users.find(function (user){
+            return (user.username == username);
+		});	
+
+		return currentUser;
 	}
 
 	return {
-		getUsers : getUsers
+		getUsers : getUsers,
+		getUser  : getUser
 	};
 
 })();

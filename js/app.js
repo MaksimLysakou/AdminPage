@@ -1,4 +1,4 @@
 (function(){
 	angular
-		.module('adminPage', ['ngRoute']);
+		.module('adminPage', ['ui.router']);
 })();

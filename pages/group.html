@@ -1,3 +1,35 @@
 <div>
-	<h1>{{ groupCtrl.groupname}} edit page</h1>
+	<div class="description">Страница редактирования группы <b> {{ groupCtrl.group.groupname }} - {{ groupCtrl.group.label }} </b></div>
+	<div class="contentContainer"><!-- 
+		<div class="menu">
+			<ul class="nav nav-tabs">
+			  <li ng-repeat="tab in groupCtrl.tabs" ng-class="{ 'active': groupCtrl.activeTab === tab }">
+			  	<a href="{{ tab.href }}"> {{ tab.label }} </a>
+			  </li>
+			</ul>
+		</div> -->
+		<div class="edit-form">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+				    <label class="col-md-2 control-label">Id группы</label>
+				    <div class="col-md-8">
+				    	<input class="form-control" placeholder="Id группы" value = "{{ groupCtrl.group.groupname }}" ng-model="groupCtrl.group.groupname"> 
+				    </div>
+				</div>
+
+				<div class="form-group">
+				    <label class="col-md-2 control-label">Название группы</label>
+				    <div class="col-md-8">
+				    	<input class="form-control" placeholder="Название группы" value = "{{ groupCtrl.group.label }}" ng-model="groupCtrl.group.label"> 
+				    </div>
+				</div>
+
+				<div class="form-group">
+				    <div class="col-md-offset-2 col-md-10">
+				      <button type="submit" class="btn btn-default" ng-click="">Сохранить</button>
+				    </div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>

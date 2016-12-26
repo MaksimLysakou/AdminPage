@@ -4,7 +4,7 @@
 	<div class="contentContainer">
 		<div class="input-group search-form">
 		  <span class="input-group-addon">Поиск: </span>
-		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search.$" />
+		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search.$" ng-model-options="{ debounce: 300 }"/>
 		</div>	
 
         <table class="table table-striped">

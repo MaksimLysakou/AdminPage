@@ -1,5 +1,5 @@
 angular
 	.module('adminPage')
-	.controller('userController', function($routeParams) {
-		this.username = $routeParams.username;
+	.controller('userController', function($stateParams) {
+		this.user = usersService.getUser($stateParams.username);
 	});

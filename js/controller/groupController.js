@@ -1,5 +1,5 @@
 angular
 	.module('adminPage')
-	.controller('groupController', function($routeParams) {
-		this.groupname = $routeParams.groupname;
+	.controller('groupController', function($stateParams) {
+		this.group = groupsService.getGroup($stateParams.groupname);
 	});

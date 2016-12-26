@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="adminPage">
-<head>
-	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-	<title>Admin page</title>
+		<title>Admin page</title>
 
-	<link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<script type="text/javascript" src="vendor/js/angular.min.js"></script>
-	<script type="text/javascript" src="vendor/js/angular-route.min.js"></script>
-	
+		<script type="text/javascript" src="vendor/js/angular.min.js"></script>
+		<script type="text/javascript" src="vendor/js/angular-ui-router.min.js"></script>
+		
 
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/route-config.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/route-config.js"></script>
 
-	<script type="text/javascript" src="js/controller/navController.js"></script>
+		<script type="text/javascript" src="js/controller/navigation/mainNavController.js"></script>
+		<script type="text/javascript" src="js/controller/navigation/usersNavController.js"></script>
+		<script type="text/javascript" src="js/controller/navigation/groupsNavController.js"></script>
 
-	<script type="text/javascript" src="js/service/usersService.js"></script>
-	<script type="text/javascript" src="js/controller/usersController.js"></script>
+		<script type="text/javascript" src="js/service/usersService.js"></script>
+		<script type="text/javascript" src="js/controller/usersController.js"></script>
 
-	<script type="text/javascript" src="js/service/groupsService.js"></script>
-	<script type="text/javascript" src="js/controller/groupsController.js"></script>
+		<script type="text/javascript" src="js/service/groupsService.js"></script>
+		<script type="text/javascript" src="js/controller/groupsController.js"></script>
 
-	<script type="text/javascript" src="js/controller/userController.js"></script>
-	<script type="text/javascript" src="js/controller/groupController.js"></script>
+		<script type="text/javascript" src="js/controller/userController.js"></script>
+		<script type="text/javascript" src="js/controller/groupController.js"></script>
+	</head>
 
-
-
-</head>
-
-<body>
-	<div ng-controller="navController as navCtrl">
+	<body>
 		<ul class="nav nav-tabs">
-		  <li ng-repeat="tab in navCtrl.tabs" ng-class="{ 'active': navCtrl.activeTab === tab }">
-		  	<a href="{{ tab.href }}"> {{ tab.label }} {{ tab.isActive()}} </a>
-		  </li>
+			<li>
+		  		<a ui-sref="index" ui-sref-active="active"> Главная </a>
+			</li>
+			<li>
+		  		<a ui-sref="users" ui-sref-active="active"> Пользователи </a>
+			</li>
+			<li>
+		  		<a ui-sref="groups" ui-sref-active="active"> Группы </a>
+			</li>
 		</ul>
-	
-      	<div ng-view>
-      	</div>
-  	</div>
-</body>
+		
+      	<ui-view />
+	</body>
 
 </html>
 

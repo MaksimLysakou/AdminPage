@@ -44,3 +44,9 @@
 .contentContainer .table-striped tbody tr td {
   	padding: 15px 5;
 }
+
+/* #edit pages */
+
+.contentContainer .edit-form {
+	margin-top: 30px;
+}
