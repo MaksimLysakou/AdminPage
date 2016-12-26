@@ -1,0 +1,23 @@
+<div class="edit-form">
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+		    <label class="col-md-2 control-label">Id группы</label>
+		    <div class="col-md-8">
+		    	<input class="form-control" placeholder="Id группы" value = "{{ groupCtrl.group.groupname }}" ng-model="groupCtrl.group.groupname"> 
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    <label class="col-md-2 control-label">Название группы</label>
+		    <div class="col-md-8">
+		    	<input class="form-control" placeholder="Название группы" value = "{{ groupCtrl.group.label }}" ng-model="groupCtrl.group.label"> 
+		    </div>
+		</div>
+
+		<div class="form-group">
+		    <div class="col-md-offset-2 col-md-10">
+		      <button type="submit" class="btn btn-default" ng-click="">Сохранить</button>
+		    </div>
+		</div>
+	</form>
+</div>

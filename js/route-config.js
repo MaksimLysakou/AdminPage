@@ -3,9 +3,9 @@ angular
     .config(config);
 
 function config($stateProvider) {
-	$stateProvider.state('index',{
-        url: '/',
-        templateUrl: 'index.html'
+	$stateProvider.state('main',{
+        url: '',
+        templateUrl: 'pages/main.html'
     });
 
 	$stateProvider.state('users',{
@@ -22,25 +22,39 @@ function config($stateProvider) {
 		controllerAs: 'groupsCtrl'
     });
 
-    $stateProvider.state('user',{
+    var userState = $stateProvider.state('user',{
+    	abstract: true,
         url: '/users/:username',
         templateUrl: 'pages/user.html',
         controller  : 'userController',
 		controllerAs: 'userCtrl'
-    })
-    	.state('user.groups', {
-          url: '/user/:username/groups',
+    });
+
+    userState.state('user.info', {
+          url: '',
+          templateUrl: 'pages/user.info.html'
+        });
+
+    userState.state('user.groups', {
+          url: '/groups',
           templateUrl: 'pages/user.groups.html'
         });
 
-    $stateProvider.state('group',{
+    var groupState = $stateProvider.state('group',{
+        abstract: true,
         url: '/groups/:groupname',
         templateUrl: 'pages/group.html',
         controller  : 'groupController',
 		controllerAs: 'groupCtrl'
-    })
-    	.state('group.users', {
-          url: '/group/:groupname/users',
+    });
+
+    groupState.state('group.info', {
+          url: '',
+          templateUrl: 'pages/group.info.html'
+        });
+
+    groupState.state('group.users', {
+          url: '/users',
           templateUrl: 'pages/group.users.html'
         });
 }
