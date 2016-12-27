@@ -1,17 +1,14 @@
 <div>
-	<div class="description">
-		Страница редактирования пользователя 
-		<b> 
-			{{ userCtrl.user.username }} 
-		</b>
-	</div>
 	<div class="contentContainer">
-		<div class="menu">
-			  	<a ui-sref-active="active" ui-sref="user.info"> {{ userCtrl.user.username }} </a>
-			  	<a ui-sref="user.groups({ username: userCtrl.user.username })"> Группы </a>
-		</div>
 		<div class="edit-form">
-			<ui-view></ui-view>
+			<div class="leftcol">
+			  	<a ui-sref-active="active" ui-sref="user.info">Редактирование пользователя</a>
+			  	<a ui-sref-active="active" ui-sref="user.groups({ username: userCtrl.user.username })"">Список групп</a>
+			</div>
+
+			<div class="rightcol">
+				<ui-view />
+			</div>
 		</div>
 	</div>
 </div>

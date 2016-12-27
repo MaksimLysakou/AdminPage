@@ -1,17 +1,14 @@
 <div>
-	<div class="description">
-		Страница редактирования группы 
-		<b> 
-			{{ groupCtrl.group.label }} ( {{ groupCtrl.group.groupname }} ) 
-		</b>
-	</div>
 	<div class="contentContainer">
-		<div class="menu">
-		  	<a ui-sref-active="active" ui-sref="group.info"> Группа</a>
-		  	<a ui-sref="group.users({ groupname: groupCtrl.group.groupname })"> Пользователи</a>
-		</div>
 		<div class="edit-form">
-			<ui-view></ui-view>
+			<div class="leftcol">
+			  	<a ui-sref-active="active" ui-sref="group.info">Редактирование группы</a>
+		  	<a ui-sref-active="active" ui-sref="group.users({ groupname: groupCtrl.group.groupname })">Список участников</a>
+			</div>
+
+			<div class="rightcol">
+				<ui-view />
+			</div>
 		</div>
 	</div>
 </div>

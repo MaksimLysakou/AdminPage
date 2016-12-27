@@ -1,31 +1,30 @@
 /* #common */
-.nav-tabs {
-	padding: 10px 15%;
-	font-size: 18px;
-	background-color: #EFEFEF;
+.nav-menu {
+	padding: 20px 20%;
+	background-color: #E0E0E0;
+	border-bottom: solid 1px #AAAAAA; 
+}
 
+.nav-menu a {
+	padding: 15px 20px 21px;
+	text-decoration: none;
 	color: #333333;
 }
 
-.nav-tabs li {
-	color: #AA3333;
+.nav-menu a:hover {
+	background-color: #E8E8E8;
+	border-radius: 5px 5px 0 0;
 }
 
-/* #users page */
+.nav-menu .active {
+	background-color: white;	
+	border-radius: 5px 5px 0 0;
+	border: solid 1px #AAAAAA;
+	border-bottom: solid 1px #FFFFFF;
+}
 
 .contentContainer {
 	padding: 0 15%;
-}
-
-.description {
-	margin: 5px 0;
-	padding: 10px 15%;
-
-	background-color: #ffefd8;
-	border-top: 1px solid #ffdeaf;
-	border-bottom: 1px solid #ffdeaf;
-
-	font-style: bold;
 }
 
 .contentContainer .search-form {
@@ -47,9 +46,63 @@
 
 /* #edit pages */
 
-.contentContainer .edit-form {
-	margin-top: 30px;
+.edit-form {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex-wrap: nowrap;
+	padding-top: 40px;
+	min-height: 500px;
 }
+
+.edit-form .leftcol {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	flex-wrap: nowrap;
+
+	width: 25%;
+
+	padding-top: 20px;
+
+	background-color: #ffde8c;
+	border: solid 2px #e0c379;
+	border-right: none;
+}
+
+.edit-form .leftcol a {
+	padding: 20px;
+	text-decoration: none;
+	color: #333333;
+}
+
+.edit-form .leftcol .active {
+	display: flex;
+	flex-wrap: nowrap;
+
+	padding: 20px;
+	background-color: white;
+	border-radius: 5px 0 0 5px;
+}
+
+.edit-form .rightcol {
+	width: 75%;
+	height: 100%;
+
+	padding: 10px;
+
+	border: solid 2px #e0c379;
+	border-left: none;
+}
+
+.form-horizontal .control-label {
+	min-width: 0px;
+}
+
+.edit-form form {
+	width: 100%;
+}
+
 
 form .ng-invalid {
 	border: 1px solid red;

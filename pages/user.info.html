@@ -2,48 +2,44 @@
 	<form class="form-horizontal" role="form" name="form">
 		<div class="form-group">
 		    <label class="col-md-2 control-label">Username</label>
-		    <div class="col-md-8">
+		    <div class="col-md-8" ng-init="username = userCtrl.user.username">
 		    	<input 
 		    		class="form-control" 
 		    		placeholder="Username" 
-		    		value = "{{ userCtrl.user.username }}" 
-		    		ng-model="userCtrl.user.username"
+		    		ng-model="username"
 		    		ng-pattern="userCtrl.usernamePattern"> 
 		    </div>
 		</div>
 
 		<div class="form-group">
 		    <label class="col-md-2 control-label">Имя</label>
-		    <div class="col-md-8">
+		    <div class="col-md-8" ng-init="firstName = userCtrl.user.firstName">
 		    	<input 
 		    		class="form-control" 
 		    		placeholder="Имя" 
-		    		value = "{{ userCtrl.user.firstName }}" 
-		    		ng-model="userCtrl.user.firstName"
+		    		ng-model="firstName"
 		    		ng-pattern="userCtrl.firstNamePattern"> 
 		    </div>
 		</div>
 
 		<div class="form-group">
 		    <label class="col-md-2 control-label">Фамилия</label>
-		    <div class="col-md-8">
+		    <div class="col-md-8" ng-init="lastName = userCtrl.user.lastName">
 		    	<input 
 		    		class="form-control" 
 		    		placeholder="Фамилия" 
-		    		value = "{{ userCtrl.user.lastName }}" 
-		    		ng-model="userCtrl.user.lastName"
+		    		ng-model="lastName"
 		    		ng-pattern="userCtrl.lastNamePattern"> 
 		    </div>
 		</div>
 
 		<div class="form-group">
 		    <label class="col-md-2 control-label">Email</label>
-		    <div class="col-md-8">
+		    <div class="col-md-8" ng-init="email = userCtrl.user.email">
 		    	<input 
 		    		class="form-control" 
 		    		placeholder="Email" 
-		    		value = "{{ userCtrl.user.email }}" 
-		    		ng-model="userCtrl.user.email"
+		    		ng-model="email"
 		    		type="email"
 		    		ng-minlength="3" 
 		    		ng-maxlength="30"> 

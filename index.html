@@ -25,19 +25,11 @@
 	</head>
 
 	<body>
-		<ul class="nav nav-tabs">
-			<li>
-		  		<a ui-sref="main" ui-sref-active="active"> Главная </a>
-			</li>
-			<li>
-		  		<a ui-sref="users" ui-sref-active="active"> Пользователи </a>
-			</li>
-			<li>
-		  		<a ui-sref="groups" ui-sref-active="active"> Группы </a>
-			</li>
-		</ul>
-
-		
+		<div class="nav-menu">
+	  		<a ui-sref-active="active" ui-sref="main">Главная</a>
+	  		<a ui-sref-active="active" ui-sref="users">Пользователи</a>
+	  		<a ui-sref-active="active" ui-sref="groups">Группы</a>
+		</div>
       	<ui-view />
 	</body>
 </html>
@@ -47,8 +39,5 @@
 <!-- 
 	TODO: 	Вёрстка кнопок перехода в group и user 
 			Наполнить контентом main.html
-			{ Добавть вывод ошибок при сохранении user и group
-			  Изменить ng-model }
-			Breadcrumb
-			Нужно ли редактировать список групп, в которые входит пользователь?
+			Добавть вывод ошибок при сохранении user и group
  -->
