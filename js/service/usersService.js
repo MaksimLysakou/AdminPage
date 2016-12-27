@@ -58,9 +58,18 @@ var usersService = (function(){
 		return currentUser;
 	}
 
+	function getUsersByGroup(groupname) {
+		return users.filter(function(user){
+			return user.groups.some(function(group) {
+				return (group.groupname == groupname);
+			});
+		});
+	}
+
 	return {
 		getUsers : getUsers,
-		getUser  : getUser
+		getUser  : getUser,
+		getUsersByGroup : getUsersByGroup
 	};
 
 })();

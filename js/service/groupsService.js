@@ -35,9 +35,18 @@ var groupsService = (function(){
 		return currentGroup;
 	}
 
+	function getGroupsByUser(username) {
+		return groups.filter(function(group){
+			return group.users.some(function(user) {
+				return (user == username);
+			});
+		});
+	}
+
 	return {
 		getGroups : getGroups,
-		getGroup  : getGroup
+		getGroup  : getGroup,
+		getGroupsByUser : getGroupsByUser
 	};
 
 })();

@@ -12,8 +12,4 @@ angular
 		this.editGroup = function(group) {
 			$location.url("groups/" + group.groupname);
 		}
-
-		this.editUser = function(user) {
-			$location.url("users/" + user.username);
-		}
 	});

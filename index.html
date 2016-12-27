@@ -11,18 +11,13 @@
 		<script type="text/javascript" src="vendor/js/angular.min.js"></script>
 		<script type="text/javascript" src="vendor/js/angular-ui-router.min.js"></script>
 		
-
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript" src="js/route-config.js"></script>
 
-		<script type="text/javascript" src="js/controller/navigation/mainNavController.js"></script>
-		<script type="text/javascript" src="js/controller/navigation/usersNavController.js"></script>
-		<script type="text/javascript" src="js/controller/navigation/groupsNavController.js"></script>
-
 		<script type="text/javascript" src="js/service/usersService.js"></script>
-		<script type="text/javascript" src="js/controller/usersController.js"></script>
-
 		<script type="text/javascript" src="js/service/groupsService.js"></script>
+
+		<script type="text/javascript" src="js/controller/usersController.js"></script>
 		<script type="text/javascript" src="js/controller/groupsController.js"></script>
 
 		<script type="text/javascript" src="js/controller/userController.js"></script>
@@ -41,7 +36,19 @@
 		  		<a ui-sref="groups" ui-sref-active="active"> Группы </a>
 			</li>
 		</ul>
+
 		
       	<ui-view />
 	</body>
 </html>
+
+
+
+<!-- 
+	TODO: 	Вёрстка кнопок перехода в group и user 
+			Наполнить контентом main.html
+			{ Добавть вывод ошибок при сохранении user и group
+			  Изменить ng-model }
+			Breadcrumb
+			Нужно ли редактировать список групп, в которые входит пользователь?
+ -->

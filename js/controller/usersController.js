@@ -8,11 +8,6 @@ angular
 		  		// TODO: http get request; (+5)
 		  	}
 		}
-
-		this.editGroup = function(group) {
-			$location.url("groups/" + group.groupname);
-		}
-
 		this.editUser = function(user) {
 			$location.url("users/" + user.username);
 		}
