@@ -3,9 +3,11 @@ angular
     .config(config);
 
 function config($stateProvider) {
-	$stateProvider.state('main',{
+	$stateProvider.state('users-default',{
         url: '',
-        templateUrl: 'pages/main.html'
+        templateUrl: 'pages/users.html',
+        controller  : 'usersController',
+        controllerAs: 'usersCtrl'
     });
 
 	$stateProvider.state('users',{

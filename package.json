@@ -1,0 +1,24 @@
+{
+  "name": "admin-page",
+  "version": "1.0.0",
+  "description": "Small admin-page angularjs application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xerotico/AdminPage.git"
+  },
+  "author": "Xerotico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xerotico/AdminPage/issues"
+  },
+  "homepage": "https://github.com/Xerotico/AdminPage#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security"
+  }
+}
