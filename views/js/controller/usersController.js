@@ -1,7 +1,10 @@
 angular
 	.module('adminPage')
 	.controller('usersController', function($location) {
+
 		this.users = usersService.getUsers("", 0, 15); // (request string, start = 0, count = 15) TODO
+
+		console.log(usersService.getUsers("", 0, 15));
 		
 		window.onscroll = function() {
 		  	if(window.scrollY == window.scrollMaxY && this.elementsLimit < this.users.length) {

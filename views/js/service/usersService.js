@@ -1,69 +1,24 @@
 var usersService = (function(){
 
-	this.users = [
-					{ 
-						"username" : "First-user",
-						"firstName" : "Максим",
-						"lastName" : "Лысаков",
-						"email" : "Lysakov_MS_14@mail.ru",
-						"groups" : [ 
-							{ 
-								"label" : "Лучшая группа",
-								"groupname" : "group1"
-							}, 
-							{ 
-								"label" : "Пользователи",
-								"groupname" : "group3"
-							}, 
-							{ 
-								"label" : "Администраторы",
-								"groupname" : "group4"
-							}
-						]
-					},
-					{ 
-						"username" : "BeStUsEr",
-						"firstName" : "Петька",
-						"lastName" : "Васильев",
-						"email" : "username2006@tut.by",
-						"groups" : []
-					},
-					{ 
-						"username" : "Lorem.User",
-						"firstName" : "Ipsum",
-						"lastName" : "Dolor",
-						"email" : "sit-amet@example.com",
-						"groups" : [ 
-							{
-								"label" : "Лучшая группа",
-								"groupname" : "group1"
-							},
-							{
-								"label" : "Лучшая группа",
-								"groupname" : "group2"
-							}
-						]
-					}
-				];
-
 	function getUsers(request, start, count) {
-		return users; // TODO: http get request; (15)
+		this.users = [];
+
+		$.ajax({ url: "api/users?request=" + request + "&start=" + start + "&count=" + count, 
+	        async: false,
+	        success: function(data) {
+				users = $.parseJSON( data );
+			}
+        });
+
+        return users;
 	}
 
 	function getUser(username) {
-		var currentUser = users.find(function (user){
-            return (user.username == username);
-		});	
-
-		return currentUser;
+		return getUsers("{username : " + username + "}", 0, 1);
 	}
 
-	function getUsersByGroup(groupname) {
-		return users.filter(function(user){
-			return user.groups.some(function(group) {
-				return (group.groupname == groupname);
-			});
-		});
+	function getUsersByGroup(groupname, start, count) {
+		return getUsers("{groupname : " + groupname + "}", start, count);
 	}
 
 	return {
