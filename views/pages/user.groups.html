@@ -14,8 +14,8 @@
 				<td>{{ group.label }}</td>
 				<td>
 					<div ng-repeat="user in group.users">
-						<a href="#/users/{{ user }}">
-							{{ user }}
+						<a href="#/users/{{ user.username }}">
+							{{ user.username }}
 						</a> 
 					</div>
 				</td>

@@ -2,10 +2,10 @@
 	<div class="contentContainer">
 		<div class="input-group search-form">
 		  <span class="input-group-addon">Поиск: </span>
-		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search.$" ng-model-options="{ debounce: 300 }"/>
+		  <input type="text" class="form-control" placeholder="Введите строку поиска" ng-model="search" ng-change="groupsCtrl.makeRequest(search)" ng-model-options="{ debounce: 300 }"/>
 		</div>	
 
-        <table class="table table-striped">
+        <table class="table table-striped" ng-show="groupsCtrl.groups.length > 0">
 			<thead>
 			<tr>
 				<th>Id</th>
@@ -15,13 +15,13 @@
 			</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="group in groupsCtrl.groups| filter:search:strict | limitTo: groupsCtrl.elementsLimit">
+				<tr ng-repeat="group in groupsCtrl.groups">
 					<td>{{ group.groupname }}</td>
 					<td>{{ group.label }}</td>
 					<td>
 						<div ng-repeat="user in group.users">
-							<a href="#/users/{{ user }}">
-								{{ user }}
+							<a href="#/users/{{ user.username }}">
+								{{ user.username }}
 							</a> 
 						</div>
 					</td>
@@ -33,5 +33,9 @@
 				</tr>
 			</tbody>
         </table>
+
+        <div ng-hide="groupsCtrl.groups.length > 0">
+        	Групп не найдено!
+        </div>
 	</div>
 </div>

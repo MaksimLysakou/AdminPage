@@ -12,4 +12,8 @@ angular
 		this.editGroup = function(group) {
 			$location.url("groups/" + group.groupname);
 		}
+
+		this.saveUser = function (username, firstName, lastName, email) {
+			usersService.saveUser(user["_id"], username, user.username, firstName, lastName, email);
+		}
 	});

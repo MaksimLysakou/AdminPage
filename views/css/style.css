@@ -71,7 +71,7 @@
 }
 
 .edit-form .leftcol a {
-	padding: 20px;
+	padding: 10px;
 	text-decoration: none;
 	color: #333333;
 }
@@ -80,7 +80,7 @@
 	display: flex;
 	flex-wrap: nowrap;
 
-	padding: 20px;
+	padding: 10px;
 	background-color: white;
 	border-radius: 5px 0 0 5px;
 }
