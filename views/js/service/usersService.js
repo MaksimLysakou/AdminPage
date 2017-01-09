@@ -1,75 +1,56 @@
 var usersService = (function(){
 
-	this.users = [
-					{ 
-						"username" : "First-user",
-						"firstName" : "Максим",
-						"lastName" : "Лысаков",
-						"email" : "Lysakov_MS_14@mail.ru",
-						"groups" : [ 
-							{ 
-								"label" : "Лучшая группа",
-								"groupname" : "group1"
-							}, 
-							{ 
-								"label" : "Пользователи",
-								"groupname" : "group3"
-							}, 
-							{ 
-								"label" : "Администраторы",
-								"groupname" : "group4"
-							}
-						]
-					},
-					{ 
-						"username" : "BeStUsEr",
-						"firstName" : "Петька",
-						"lastName" : "Васильев",
-						"email" : "username2006@tut.by",
-						"groups" : []
-					},
-					{ 
-						"username" : "Lorem.User",
-						"firstName" : "Ipsum",
-						"lastName" : "Dolor",
-						"email" : "sit-amet@example.com",
-						"groups" : [ 
-							{
-								"label" : "Лучшая группа",
-								"groupname" : "group1"
-							},
-							{
-								"label" : "Лучшая группа",
-								"groupname" : "group2"
-							}
-						]
-					}
-				];
+	this.users = [];
+	this.user = {};
 
 	function getUsers(request, start, count) {
-		return users; // TODO: http get request; (15)
+		$.ajax({ url: "api/users?request=" + request + "&start=" + start + "&count=" + count, 
+         async: false,
+         success: function( data ) {
+			users = data;
+		}
+        });
+
+		return users;
 	}
 
 	function getUser(username) {
-		var currentUser = users.find(function (user){
-            return (user.username == username);
-		});	
+		$.ajax({ url: "api/users?username=" + username, 
+         async: false,
+         success: function( data ) {
+			user = data[0];
+		}
+        });
 
-		return currentUser;
+        return user;
 	}
 
 	function getUsersByGroup(groupname) {
-		return users.filter(function(user){
-			return user.groups.some(function(group) {
-				return (group.groupname == groupname);
-			});
-		});
+		$.ajax({ url: "api/users?groupname=" + groupname, 
+         async: false,
+         success: function( data ) {
+			users = data;
+		}
+        });
+
+		return users;
+	}
+
+
+	function saveUser(id, username, oldUsername, firstName, lastName, email) {
+		$.post( "api/user", { id: id,
+							  username: username,
+							  oldUsername: oldUsername,
+							  firstName: firstName,
+							  lastName: lastName,
+							  email: email } );
 	}
 
 	return {
 		getUsers : getUsers,
 		getUser  : getUser,
-		getUsersByGroup : getUsersByGroup
+		getUsersByGroup : getUsersByGroup,
+		saveUser : saveUser
 	};
 
 })();
